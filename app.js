@@ -14,4 +14,5 @@ colorPicker.addEventListener('input', () => {
   }
 
   document.execCommand('foreColor', false, colorPicker.value);
+  sel.addRange(range);
 });
