@@ -14,8 +14,9 @@ function saveSelection() {
     return null;
 }
 
-const updateRange = () => { 
-    savedRange = saveSelection(); 
+const updateRange = () => {
+    const range = saveSelection();
+    if (range) savedRange = range;
 };
 
 colorInput.addEventListener('keyup', updateRange);
@@ -31,8 +32,28 @@ colorPicker.addEventListener('input', () => {
         sel.addRange(savedRange);
     }
 
-    document.execCommand('styleWithCSS', false, true);
-    document.execCommand('foreColor', false, colorPicker.value);
-    
-    savedRange = saveSelection();
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return;
+
+    const range = selection.getRangeAt(0);
+
+    if (selection.isCollapsed) {
+        const span = document.createElement("span");
+        span.style.color = colorPicker.value;
+        span.appendChild(document.createTextNode("\u200B"));
+        
+        range.insertNode(span);
+        
+        const newRange = document.createRange();
+        newRange.setStart(span.childNodes[0], 1);
+        newRange.collapse(true);
+        
+        selection.removeAllRanges();
+        selection.addRange(newRange);
+        savedRange = newRange;
+    } else {
+        document.execCommand('styleWithCSS', false, true);
+        document.execCommand('foreColor', false, colorPicker.value);
+        updateRange();
+    }
 });
