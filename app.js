@@ -1,5 +1,6 @@
 const colorPicker = document.getElementById("cop");
 const colorInput = document.getElementById("editor");
+let fileHandle
 
 let savedRange = null;
 
