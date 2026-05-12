@@ -40,7 +40,7 @@ button:hover{
     font-family: 'Roboto';
     outline: black;
 }
-input[type="file"]{
+input[type="file"]::file-selector-button{
 background-color: white;
     border: none;
     border-radius: 10px;
