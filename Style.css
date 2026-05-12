@@ -40,3 +40,23 @@ button:hover{
     font-family: 'Roboto';
     outline: black;
 }
+input{
+       display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    height: 10%;
+    width: 15%;
+    transition-duration: 0.4s;
+}  
+input:hover{
+ background-color: rgb(208, 208, 208);
+    color: rgb(0, 0, 0);
+}

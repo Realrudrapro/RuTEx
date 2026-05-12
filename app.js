@@ -59,8 +59,3 @@ colorPicker.addEventListener('input', () => {
     }
 });
 
-async function save() {
-  let stream = await fileHandle.createWritable();
-  await stream.write(textarea.innertext);
-  
-}
