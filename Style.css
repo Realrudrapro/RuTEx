@@ -40,23 +40,18 @@ button:hover{
     font-family: 'Roboto';
     outline: black;
 }
-input{
-       display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
+input[type="file"]{
+background-color: white;
+    border: none;
     border-radius: 10px;
-    outline: none;
-    height: 10%;
-    width: 15%;
-    transition-duration: 0.4s;
-}  
-input:hover{
- background-color: rgb(208, 208, 208);
-    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+input[type="file"]::file-selector-button:hover{
+    background-color: rgb(208, 208, 208);
+
+    
 }
