@@ -11,7 +11,7 @@
     text-align: center;
     margin-top: -1%;
 }
-button{
+.main{
      display: flex;
     justify-content: center;
     align-items: center;
@@ -57,4 +57,20 @@ input[type="file"]::file-selector-button:hover{
 }
 .News{
     text-align: center;
+}
+.news{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    height: 10%;
+    width: 15%;
+    transition-duration: 0.4s;
 }
